@@ -57,11 +57,11 @@ Easily zoom into data
 
 Supervise event detection by removing/adding events missed by algorithm
 <br />
-<img src="images/add_and_remove_events.PNG">
+<img src="images/add_and_remove_events.png">
 
 Extract important features and plot easily
 <br />
-<img src="images/Example_plots.PNG">
+<img src="images/Example_plots.png">
 <br />
 
 <p align="right">(<a href="#top">back to top</a>)</p>
