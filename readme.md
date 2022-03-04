@@ -12,17 +12,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/drbcary/tests/tree/main/test_readme">
+  <a href="https://github.com/drbcary/mini_GUI">
     <img src="images/logo.PNG" alt="Logo">
   </a>
 
-  <h3 align="center">Ephys GUI</h3>
+  <h3 align="center">A GUI for analyzing spontaneous EPSC/IPSC data</h3>
 
-  <p align="center">
-    a gui for analyzing spontaneous EPSC/IPSC data
-    <br />
-    
-  </p>
 </div>
 
 
@@ -44,24 +39,29 @@
 </details>
 
 
+
 <!-- ABOUT THE PROJECT -->
 ## How It Looks
 
 Load in your data traces
 <br />
-<img src="images/pic.PNG">
+<img src="images/raw_trace_mini_GUI.PNG">
 
 Run template matching algorithm
 <br />
-<img src="images/pic.PNG">
+<img src="images/analyzed_trace_miniGUI_zoom1.PNG">
 
-Supervise event detection
+Easily zoom into data
 <br />
-<img src="images/pic.PNG">
+<img src="images/analyzed_trace_miniGUI_zoom2.PNG">
+
+Supervise event detection by removing/adding events missed by algorithm
+<br />
+<img src="images/add_and_remove_events.PNG">
 
 Extract important features and plot easily
 <br />
-<img src="images/pic.PNG">
+<img src="images/Example_plots.PNG">
 <br />
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -71,7 +71,16 @@ Extract important features and plot easily
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Download the folder, open up the mini_GUI.mat file and click run in MATLAB.
+Download the folder (green "Code" button at top then "Download ZIP").
+
+Open the "h5_to_mat" file in MATLAB and run to extract data from wavesurfer h5 files.
+
+Open the mini_GUI.mat file and click run in MATLAB, following directions to find 
+the .mat structure file created from h5_to_mat process.
+
+Instructions with more details on how to run the program are in progress.
+
+Feel free to contact me at dr.bcary@gmail.com if you have questions.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -80,7 +89,13 @@ Download the folder, open up the mini_GUI.mat file and click run in MATLAB.
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+MiniGUI code is not currently licensed.
+
+Waversurfer code included in the "+ws" directory are licensed by HHMI Janelia.
+License is included in "WAVESURFER_LICENSE" .txt file in main directory and also
+in the "+ws" directory.
+
+Licenses for IBW code, scrollplot, and univarscatter are included in "+utils"
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -91,7 +106,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Brian Cary - [@bcary_neuro](https://twitter.com/bcary_neuro) - dr.bcary@gmail.com
 
-Project Link: [https://github.com/drbcary/tests/test_readme](https://github.com/drbcary/tests/test_readme)
+Project Link: [https://github.com/drbcary/mini_GUI](https://github.com/drbcary/mini_GUI)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -100,9 +115,8 @@ Project Link: [https://github.com/drbcary/tests/test_readme](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+I want to thank the authors of utilities needed for this program.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -113,5 +127,4 @@ Project Link: [https://github.com/drbcary/tests/test_readme](https://github.com/
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[linkedin-url]: https://www.linkedin.com/in/brian-cary-39a631208/

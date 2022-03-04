@@ -700,7 +700,7 @@ for mini = 1:length(timeindx)
         end
 
 %         if end_baseline>-6e-12
-        shifted_events_trace = padmat(shifted_events_trace, shifted_event, 1);
+        shifted_events_trace = utils.padmat(shifted_events_trace, shifted_event, 1);
 %         end
 
 
@@ -750,7 +750,7 @@ for mini = 1:length(timeindx)
         end
 
 %         if end_baseline>-6e-12
-        shift_filt_events = padmat(shift_filt_events, shifted_event, 1);
+        shift_filt_events = utils.padmat(shift_filt_events, shifted_event, 1);
 %         end
 
 

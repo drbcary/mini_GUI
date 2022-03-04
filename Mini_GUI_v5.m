@@ -530,7 +530,8 @@ explore_data
 disp('SELECT folder to save files in...')
 if hs.debug_on == 1
     if ~isempty(hs.data_path)
-        hs.SaveDir = hs.data_path;
+        username = getenv('USERNAME');
+        hs.SaveDir = ['C:' filesep 'Users' filesep username filesep 'Desktop' filesep];
     end
 else
     if ~isempty(hs.data_path)
@@ -1137,7 +1138,7 @@ function add_mini_but(~,~)
         hs.thiscell.timeindx = [hs.thiscell.timeindx, round(add_int(1))];
         hs.thiscell.amp = [hs.thiscell.amp,sm_pk_val];
         hs.thiscell.event_start_ind = [hs.thiscell.event_start_ind, event_start_ind];
-        hs.thiscell.events = padmat(hs.thiscell.events, added_event./hs.amp_scale, 2);
+        hs.thiscell.events = utils.padmat(hs.thiscell.events, added_event./hs.amp_scale, 2);
         hs.thiscell.sm_pk_ind = [hs.thiscell.sm_pk_ind, sm_pk_ind];
         hs.thiscell.decay_ind = [hs.thiscell.decay_ind, decay_ind];
                 
@@ -1445,7 +1446,7 @@ function save_this_data_but(~,~)
         
     timestamp = clock;
     
-    assignin('base', 'Output', hs.analysis_output); 
+    assignin('base', 'Analysis_Output', hs.analysis_output); 
     assignin('base', 'Simple_Output', hs.simple_output);
     
     analysis_output = hs.analysis_output;
@@ -1691,7 +1692,7 @@ function avg_temp_but(~,~)
                     decay_base_thresh = -ev_amps(mini)*decay_thresh_prop;
 
                     if end_baseline > decay_base_thresh
-                        events_toKeep = padmat(events_toKeep, mini_ev,1);
+                        events_toKeep = utils.padmat(events_toKeep, mini_ev,1);
                     end
                 end
 

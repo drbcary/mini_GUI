@@ -73,10 +73,25 @@ transient_vals = transient_vals(transient_st:transient_end);
 time = (0:(1/samprate):(length(transient_vals)/samprate)-(1/samprate)).';
 
 transient_vals = transient_vals - mean(transient_vals(end-5:end));
+
+low_bound1 = mean(transient_vals(1:2)*.9);
+low_bound2 = mean(transient_vals(1:5))*.1;
+up_bound1 = transient_vals(1)*1.1;
+up_bound2 = transient_vals(1)*1.25;
+
+if up_bound1 <= low_bound1
+    disp('upper bound too low...')
+    up_bound1 = mean(transient_vals(1:2))*1.5;
+end
+if up_bound2 <= low_bound2
+    disp('upper bound too low...')
+    up_bound2 = mean(transient_vals(1:5))*1.75;
+end
+
 s = fitoptions('Method', 'NonlinearLeastSquares', ...
     'StartPoint', [transient_vals(1), tau_est*0.5, transient_vals(10), tau_est*1.5],...
-     'Lower', [mean(transient_vals(1:2)*.9), tau_est*0.001, mean(transient_vals(1:5))*.1, tau_est*0.01],...
-     'Upper', [transient_vals(1)*1.1, tau_est*5, transient_vals(1)*1.25, tau_est*15]);
+     'Lower', [low_bound1, tau_est*0.001, low_bound2, tau_est*0.01],...
+     'Upper', [up_bound1, tau_est*5, up_bound2, tau_est*15]);
 f = fittype('a*exp(-x/b) + c*exp(-x/d)','options',s);
 % watchfithappen(time, transient_vals, f, 10)
 
